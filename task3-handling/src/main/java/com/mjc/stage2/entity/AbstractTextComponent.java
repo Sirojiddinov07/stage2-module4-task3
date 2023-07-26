@@ -19,4 +19,6 @@ public abstract class AbstractTextComponent {
     }
 
     public abstract int getSize();
+
+    public abstract void addComponent(TextComponent textComponent);
 }

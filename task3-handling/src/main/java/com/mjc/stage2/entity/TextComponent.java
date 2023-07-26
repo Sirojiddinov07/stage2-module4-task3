@@ -11,6 +11,10 @@ public class TextComponent extends AbstractTextComponent {
         super(componentType);
     }
 
+    public TextComponent(String word) {
+        super(TextComponentType.valueOf(word));
+    }
+
     @Override
     public String operation() {
         return null;
@@ -29,5 +33,10 @@ public class TextComponent extends AbstractTextComponent {
     @Override
     public int getSize() {
         return 0;
+    }
+
+    @Override
+    public void addComponent(TextComponent textComponent) {
+
     }
 }
