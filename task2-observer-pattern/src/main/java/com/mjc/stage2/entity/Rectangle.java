@@ -11,6 +11,7 @@ public class Rectangle implements Observable {
     private int id;
     private double sideA;
     private double sideB;
+
     private List<Observer> observers = new ArrayList<>();
 
     public Rectangle(int id, double sideA, double sideB) {
@@ -57,7 +58,7 @@ public class Rectangle implements Observable {
 
     @Override
     public void notifyObserver() {
-        RectangleEvent event = new RectangleEvent(this);
-        observers.forEach(observer -> observer.handleEvent(event));
+        RectangleEvent rectangleEvent = new RectangleEvent(this);
+        observers.forEach(o -> o.handleEvent(rectangleEvent));
     }
 }
