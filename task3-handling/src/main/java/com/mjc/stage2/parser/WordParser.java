@@ -1,19 +1,17 @@
 package com.mjc.stage2.parser;
 
-
 import com.mjc.stage2.entity.AbstractTextComponent;
-import com.mjc.stage2.entity.TextComponent;
+import com.mjc.stage2.entity.SymbolLeaf;
+import com.mjc.stage2.entity.TextComponentType;
 
-public class WordParser {
-
-
+public class WordParser extends AbstractTextParser{
+    @Override
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
+        System.out.println("word parser");
+        char[] arr = string.toCharArray();
 
-        String[] words = string.split("\\s+"); // Split the string into words using whitespace as the delimiter
-
-        for (String word : words) {
-            // Create a new TextComponent for each word and add it to the abstractTextComponent
-            abstractTextComponent.addComponent(new TextComponent(word));
+        for (char x : arr) {
+            abstractTextComponent.add(new SymbolLeaf(x, TextComponentType.WORD));
         }
     }
 }

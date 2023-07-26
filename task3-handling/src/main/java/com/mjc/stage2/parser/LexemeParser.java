@@ -11,7 +11,7 @@ public class LexemeParser extends AbstractTextParser {
     @Override
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
         for (char ch : string.toCharArray()) {
-            abstractTextComponent.add(new SymbolLeaf(TextComponentType.SYMBOL));
+            abstractTextComponent.add(new SymbolLeaf(x, TextComponentType.SYMBOL));
         }
     }
 
